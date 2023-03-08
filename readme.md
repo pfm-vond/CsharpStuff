@@ -1,17 +1,17 @@
 Visual studio :
-	 ## shortcut ##
-		Ctrl -  / Ctrl Shift - : previous / next
-		Ctrl F12 : goto implem
-		Ctrl R Ctrl A : run all test
-		CTRL K Ctrl K : create waypoint
-		CTRL K Ctrl P : navigate to last waypoint
-		CTRL R CTRL R : rename
-	## Snippet ##
+ ## shortcut ##
+	Ctrl -  / Ctrl Shift - : previous / next
+	Ctrl F12 : goto implem
+	Ctrl R Ctrl A : run all test
+	CTRL K Ctrl K : create waypoint
+	CTRL K Ctrl P : navigate to last waypoint
+	CTRL R CTRL R : rename
+## Snippet ##
 	ctor
 	testm
 	... + customisable et partageable.
 
-Csharp
+## la stack C# ##
 
 ![image de l'environnemnt csharp, .net et CLR](CsharpOrganisation.png)
 
