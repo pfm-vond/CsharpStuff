@@ -13,7 +13,7 @@ Visual studio :
 
 Csharp
 
-![[CsharpOrganisation.png]]
+![image de l'environnemnt csharp, .net et CLR](CsharpOrganisation.png)
 
 concept en 2 mots :
 
