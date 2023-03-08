@@ -25,21 +25,16 @@ public readonly record struct Metre(double Value)
 
 internal readonly record struct InvisibleToCustomer();
 
-public class toto
+struct EnumLikeStructure
 {
-    public string Name { get; }
-}
+    public static EnumLikeStructure CLE1 = new EnumLikeStructure("cle1", "index1");
+    public static EnumLikeStructure CLE2 = new EnumLikeStructure("cle2", "index2");
+    public static EnumLikeStructure CLE3 = new EnumLikeStructure("cle3", "index3");
+    public static EnumLikeStructure CLE4 = new EnumLikeStructure("cle4", "index4");
 
-struct Champs
-{
-    public static Champs CLE1 = new Champs("cle1", "index1");
-    public static Champs CLE2 = new Champs("cle2", "index2");
-    public static Champs CLE3 = new Champs("cle3", "index3");
-    public static Champs CLE4 = new Champs("cle4", "index4");
+    public static EnumLikeStructure[] Values => new[] { CLE1, CLE2, CLE3, CLE4 };
 
-    public static Champs[] Values => new[] { CLE1, CLE2, CLE3, CLE4 };
-
-    private Champs(string key, string value )
+    private EnumLikeStructure(string key, string value )
     {
         Key = key;
         Value = value;
