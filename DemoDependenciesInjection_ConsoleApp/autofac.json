@@ -1,0 +1,19 @@
+{
+  "defaultAssembly": "DemoDependenciesInjection",
+  "modules": [
+    {
+      "type": "DemoDependenciesInjection.FizzBuzzModule",
+      "components": [
+        {
+          "type": "InMemory",
+          "services": [
+            {
+              "type": "IUserDao"
+            }
+          ],
+          "properties": {
+            "LoadOutSideRules": false
+          }
+        }
+      ]
+    }
