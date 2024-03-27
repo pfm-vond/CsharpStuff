@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
 
-namespace DemoCsharp_10_Facts
+namespace DemoCsharp_48_Facts
 {
     public class ExtensionMethodsExist
     {

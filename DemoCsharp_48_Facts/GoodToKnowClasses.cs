@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using FluentAssertions;
+using Microsoft.Extensions.Caching.Memory;
 using Xunit;
 
-namespace DemoCsharp_10_Facts
+namespace DemoCsharp_48_Facts
 {
     public class GoodToKnowClasses
     {
@@ -45,6 +46,7 @@ namespace DemoCsharp_10_Facts
             string name = "pierre";
             System.FormattableString ex = $"the id for {name} is {id}";
 
+            ex.Format.Should().Be("the id for {0} is {1}");
             ex.GetArgument(0).Should().Be(name);
             ex.GetArgument(1).Should().Be(id);
         }
@@ -61,6 +63,33 @@ namespace DemoCsharp_10_Facts
             [System.Runtime.CompilerServices.CallerMemberName] string name = "")
         {
             return name;
+        }
+
+        [Fact]
+        public void System_Dynamic_ExpandoObject_to_define_an_dictionnary_string_Object_from_code()
+        {
+            dynamic o = new System.Dynamic.ExpandoObject();
+            o.toto = 1;
+            o.titi = "string";
+
+            IDictionary<string, object> dictionaire = o;
+            dictionaire.Keys.Should().Contain("toto");
+            dictionaire.Keys.Should().Contain("titi");
+
+            dictionaire["toto"].Should().Be(1);
+            dictionaire["titi"].Should().Be("string");
+            ((Func<object>)(() => dictionaire["plop"])).Should().Throw<KeyNotFoundException>();
+        }
+
+        [Fact]
+        public void MemoryCache_allow_you_to_create_a_complex_distributed_or_local_cache_easily()
+        {
+            IMemoryCache cache = new MemoryCache(new MemoryCacheOptions());
+
+            Guid id = cache.GetOrCreate("id", e => Guid.NewGuid());
+            Guid id2 = cache.GetOrCreate("id", e => Guid.NewGuid());
+
+            id.Should().Be(id2);
         }
     }
 }

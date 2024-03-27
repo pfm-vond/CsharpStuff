@@ -1,7 +1,9 @@
 using Microsoft.VisualStudio.TestPlatform.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
+using System.Linq;
 
 namespace DemoCsharp_10_Facts
 {
@@ -75,14 +77,14 @@ namespace DemoCsharp_10_Facts
         {
             dynamic o = new System.Dynamic.ExpandoObject();
             o.toto = 1;
-            o.titi = "string";
+            o.titi = "string1";
 
             IDictionary<string, object?> dictionaire = o;
             dictionaire.Keys.Should().Contain("toto");
             dictionaire.Keys.Should().Contain("titi");
 
             dictionaire["toto"].Should().Be(1);
-            dictionaire["titi"].Should().Be("string");
+            dictionaire["titi"].Should().Be("string1");
             ((Func<object?>)(() => dictionaire["plop"])).Should().Throw<KeyNotFoundException>();
         }
 

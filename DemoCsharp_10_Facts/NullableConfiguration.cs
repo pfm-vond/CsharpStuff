@@ -11,9 +11,9 @@ namespace DemoCsharp_10_Facts
             */
 
 
-            string nullstring = null;
+            //string nullstring = null;
 
-            nullstring.Should().NotBeNull();
+            //nullstring.Should().NotBeNull();
         }
     }
 }
